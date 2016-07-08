@@ -60,6 +60,11 @@ General styles (General Module, wrapping around the modules bellow)
         font-family: serif;
         font-size: 1.5em;
     }
+
+p {
+    font-weight: bold;
+    height: 40px;
+}
     /* -------------------------------------
 Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
