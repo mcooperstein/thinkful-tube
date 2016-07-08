@@ -4,100 +4,102 @@ Basic rules to write CSS
 - write GENERAL rules first (for all the paragraph tags in the website for example) and only after that write CSS for SPECIFIC tags (for example the paragraph tags inside the footer)
 - write the css styles to define for the parent (outside) container and THEN the children (inside containers) of that parent and THEN the children (inside containers) of the child above
 */
-
-
-/* -------------------------------------
+    /* -------------------------------------
 CSS reset
 (all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
 */
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
-    box-sizing: border-box;
-    /*reset Chrome user agent styles*/
-    -webkit-margin-before: 0px;
-    -webkit-margin-after: 0px;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-before: 0px;
-    -webkit-padding-after: 0px;
-    -webkit-padding-start: 0px;
-    -webkit-padding-end: 0px;
-}
-
-
-/* -------------------------------------
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+        box-sizing: border-box;
+        /*reset Chrome user agent styles*/
+        -webkit-margin-before: 0px;
+        -webkit-margin-after: 0px;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-before: 0px;
+        -webkit-padding-after: 0px;
+        -webkit-padding-start: 0px;
+        -webkit-padding-end: 0px;
+    }
+    /* -------------------------------------
 General styles (General Module, wrapping around the modules bellow)
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
-body {
-    font-family: sans-serif;
-    background-color: aqua;
+    body {
+        font-family: sans-serif;
+        background-color: aqua;
+        width: 100%;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    #videoSearch {
+        text-align: center;
+        height: 2em;
+        width: 20em;
+        border: 2px solid black;
+    }
+
+    #enter {
+        margin-top: 1em;
+        text-align: center;
+        height: 2em;
+        width: 5em;
+        border-radius: 5px;
+        margin-bottom: 1em;
+        background-color: red;
+        color: white;
+        font-family: serif;
+        font-size: 1.5em;
+    }
+
+p {
+    font-weight: bold;
+    height: 40px;
 }
-
-form {
-    text-align: center;
-}
-
-#videoSearch {
-    text-align: center;
-    height: 2em;
-    width: 20em;
-}
-
-#enter {
-    margin-top: 1em;
-    text-align: center;
-    height: 2em;
-    width: 5em;
-    border-radius: 5px;
-    margin-bottom: 1em;
-    background-color: red;
-    color: white;
-    font-family: serif;
-}
-
-
-/* -------------------------------------
+    /* -------------------------------------
 Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
 */
-
-
-/* -------------------------------------
+    /* -------------------------------------
 Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
-#search-results ul {
-    overflow: hidden;
-    margin-top: 0.5em;
-    list-style: none;
-}
-
-#search-results li {
-    float: left;
-    margin: 0em;
-    padding: 1em;
-    border: 3px solid red;
-    border-bottom-width: 1px;
-}
-
-#search-results li img {
-    display: block;
-    max-width: 100%;
-}
-
-#search-results li p {
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-    border-bottom: 2px solid gray;
-    max-width: 100%;
+    @media only screen and (max-width: 914px) {
+        #search-results ul {
+            overflow: hidden;
+            margin-top: 0.5em;
+            list-style: none;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #search-results li {
+            margin: 0em;
+            padding: 1em;
+            border: 4px solid red;
+            border-bottom-width: 1px;
+        }
+        #search-results li img {
+            display: block;
+            max-width: 100%;
+        }
+        #search-results li p {
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid gray;
+            max-width: 100%;
+        }
+    }
     /* -------------------------------------
 Footer styles (Main Module)
 (all the styles inside the < footer > tag)
@@ -108,3 +110,30 @@ Responsive styles
 (the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
 place all the mobile tables styles bellow this line
 */
+
+    @media only screen and (min-width: 915px) {
+        #search-results ul {
+            overflow: hidden;
+            margin-top: 0.5em;
+            list-style: none;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #search-results li {
+            float: left;
+            margin: 0em;
+            padding: 1em;
+            width: 50%;
+        }
+        #search-results li img {
+            display: block;
+            max-width: 100%;
+        }
+        #search-results li p {
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid gray;
+            max-width: 100%;
+        }
+    }
